@@ -8,6 +8,11 @@
       url = "github:Filippo-Galli/UMNN";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    torchtestcase = {
+      url = "github:Filippo-Galli/torch-test-case";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -15,6 +20,7 @@
       self,
       nixpkgs,
       UMNN,
+      torchtestcase,
       ...
     }:
     let
@@ -33,12 +39,11 @@
           pkgs = import nixpkgs {
             inherit system;
           };
-          torchtestcase = pkgs.callPackage ./torchtestcase.nix { };
         in
         {
           nflows = pkgs.callPackage ./. {
             UMNN = inputs.UMNN.packages.${system}.default;
-            inherit torchtestcase;
+            torchtestcase = inputs.torchtestcase.packages.${system}.default;
           };
 
           default = self.packages.${system}.nflows;

@@ -9,7 +9,7 @@
   tensorboard ? python3Packages.tensorboard,
   torch ? python3Packages.torch,
   tqdm ? python3Packages.tqdm,
-  torchtestcase ? python3Packages.torchtestcase,
+  torchtestcase,
   UMNN,
 }:
 

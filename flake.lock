@@ -39,7 +39,28 @@
     "root": {
       "inputs": {
         "UMNN": "UMNN",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "torchtestcase": "torchtestcase"
+      }
+    },
+    "torchtestcase": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790947693,
+        "narHash": "sha256-adGUcacuQYkkCx0KYTrt2/mYFT/GQLWOsWyYnkcM9po=",
+        "owner": "Filippo-Galli",
+        "repo": "torch-test-case",
+        "rev": "5cff130c331d33be8e1c326149ed7b0445ddfa92",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Filippo-Galli",
+        "repo": "torch-test-case",
+        "type": "github"
       }
     }
   },
